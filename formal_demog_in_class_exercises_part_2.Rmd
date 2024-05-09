@@ -179,6 +179,21 @@ ngx = c(8.63, 9.26, 8.30, 8.31, 12.25, 16.65, 12.06,
 names(ngx) <- x
 sum(ngx)
 ```
+
+
+```{r}
+par(mfrow=c(1,2))
+barplot(ngx, horiz=TRUE, col = "blue", 
+        xlab = "Proportion",
+        main = "Net migration age schedule")
+ncx <- nKxt[,"1995"]/sum(nKxt[,"1995"])
+barplot(ncx, horiz = TRUE, col="red",
+        main = "Age distribution\nof initial population",
+        xlab = 'Proportion')
+```
+
+
+
 You can see that $ngx$ sums to 1.0, and so we can multiply it by the number of net immigrants to get the vector ${\bf G}$.
 
 The logic of each projection step is 
